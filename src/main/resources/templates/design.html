@@ -7,7 +7,7 @@
 	<h1>Design your taco!</h1>
 	
 
-	<form method="post" th:object="${design}">
+	<form method="post" th:object="${taco}">
 		<div th:if="${#fields.hasErrors()}">
 			<span class="validationErrors">
 				Please correct the problems bellow and resubmit.
@@ -50,7 +50,10 @@
 		<div>
 			<h3>Name your taco creation:</h3>
 			<input type="text" th:field="*{name}" /> <br />
-			<button>Submit your taco</button>
+			<span class="validationError"
+				th:if="${#fields.hasErrors('name')}"
+				th:errors="*{name}">Invalid name for your taco design</span>
+				<button>Submit your taco</button>
 		</div>
 
 	</form>

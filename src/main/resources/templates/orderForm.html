@@ -48,10 +48,16 @@
 		
 		<label for="ccExpiration">Expiration: </label>
 		<input type="text" th:field="*{ccExpiration}"/>
+		<span class="validationError"
+			th:if="${#fields.hasErrors('ccExpiration')}"
+			th:errors="*{ccExpiration}">Credit Card Expiration Error</span>
 		<br/>
 		
 		<label for="ccCVC">CVC: </label>
 		<input type="text" th:field="*{ccCVC}"/>
+		<span class="validationError"
+			th:if="${#fields.hasErrors('ccCVC')}"
+			th:errors="*{ccCVC}">Invalid value</span>
 		<br/>
 		
 		<input type="submit" value="Submit order"/>
