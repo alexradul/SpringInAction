@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class TacoDesign {
+public class Taco {
 	private String name;
 	private List<String> ingredients;
 }

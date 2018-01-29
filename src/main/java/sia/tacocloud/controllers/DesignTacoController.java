@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.extern.slf4j.Slf4j;
 import sia.tacocloud.concepts.Ingredient;
 import sia.tacocloud.concepts.Ingredient.Type;
-import sia.tacocloud.concepts.TacoDesign;
+import sia.tacocloud.concepts.Taco;
 
 @Slf4j
 @Controller
@@ -41,12 +41,12 @@ public class DesignTacoController {
 				filterByType(ingredients, type));
 		}
 		
-		model.addAttribute("design", new TacoDesign());
+		model.addAttribute("design", new Taco());
 		return "design";
 	}
 	
 	@PostMapping
-	public String processDesign(TacoDesign design) {
+	public String processDesign(Taco design) {
 		log.info("Processing design: "+ design);
 		return "home";
 	}
