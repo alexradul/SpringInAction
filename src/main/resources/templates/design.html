@@ -5,8 +5,14 @@
 </head>
 <body>
 	<h1>Design your taco!</h1>
+	
 
 	<form method="post" th:object="${design}">
+		<div th:if="${#fields.hasErrors()}">
+			<span class="validationErrors">
+				Please correct the problems bellow and resubmit.
+			</span>
+		</div>
 		<div class="grid">
 			<div class="ingredient-group">
 				<h3>Designate your wrap</h3>
