@@ -8,8 +8,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import lombok.Data;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 public class Order {
+
+	private Long id;
+
+	private Date createdAt;
 	
 	@NotBlank(message="Name is required")
 	private String name;
@@ -35,4 +43,5 @@ public class Order {
 	@Digits(integer=3, fraction = 0, message = "Invalid Card verification code")
 	private String ccCVC;
 
+	private Set<Taco> tacos = new HashSet<>();
 }
